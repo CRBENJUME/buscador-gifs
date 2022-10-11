@@ -1,0 +1,80 @@
+.App {
+  text-align: center;
+}
+
+.App-content {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  padding: 16px;
+  color: white;
+}
+
+a{
+  color: #098;
+  font-size: 32px;
+}
+
+button {
+  font-size: 18px;
+  background-color:#098;
+  color: aliceblue;
+}
+
+.App-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.App-wrapper {
+	width: 100%;
+	max-width: 90rem;
+	margin: 0 auto;
+	padding: 0 0.5em;
+}
+
+.App-results {
+  flex-shrink: 2;
+  width: 100%;
+}
+
+.App-category {
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+@media screen and (min-width: 55rem){
+  .App-main{
+    flex-direction: initial;
+  }
+
+  .App-category{
+    position: sticky;
+    top: var(--search-size-mx-h);
+    width: 40%;
+    max-width: 300px;
+  }
+}
+
+.btn {
+  border: 1px solid transparent;
+  padding: .5rem 1rem;
+  background-color: var(--brand-color_3);
+  color: var(--theme-body-txt);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn[disabled] {
+  opacity: .3;
+  pointer-events: none;
+}
+
+.btn:hover {
+  background-color: var(--brand-color_6);
+}
