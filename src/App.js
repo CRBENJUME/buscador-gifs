@@ -7,8 +7,6 @@ import statiContext  from './Context/statiContext'
 import { Link, Route } from 'wouter'
 import { GifsContextProvider } from './Context/gifContext'
 
-//const HomePage = React.lazy(() => import('./pages/Home'))
-
 export default function App() {
   return (
     <statiContext.Provider value={{
@@ -16,7 +14,6 @@ export default function App() {
       suscribete: true
     }}>
     <div className="App">
-      //<Suspense fallback={null}>
         <section className="App-content">
           <Link to="/">
             <img className='App-logo' alt='Giffy Logo' src='/logo.png'/>
@@ -36,7 +33,6 @@ export default function App() {
           />
           </GifsContextProvider>
         </section>
-      //</Suspense>
     </div>
     </statiContext.Provider>
   );
