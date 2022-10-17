@@ -8,9 +8,9 @@ import debounce from "just-debounce-it";
 export default function SearchResults ({ params }) {
     const { keyword } = params;
     const { loading, gifs, setPage } = useGifs({ keyword })
-    const externalRef = useRef()
+    const visorRef = useRef()
     const { isNearScreen } = useNearScreen({ 
-        externalRef: loading ? null : externalRef,
+        externalRef: !loading && visorRef,
         once: false 
     })
 
@@ -20,7 +20,7 @@ export default function SearchResults ({ params }) {
 
     useEffect(() => {
         if(isNearScreen) debounceHandleNextPage()
-    }, [debounceHandleNextPage,isNearScreen]) //Hasta que esto no cambie, la funcion no se renderizara nuevamente
+    })//, [debounceHandleNextPage,isNearScreen]) //Hasta que esto no cambie, la funcion no se renderizara nuevamente
 
     return <>
     {
@@ -31,9 +31,7 @@ export default function SearchResults ({ params }) {
             {decodeURI(keyword)}
         </h3>
         <ListOfGifs gifs={gifs} />
-        <div id="visor">
-
-        </div>
+        <div data-testid="visor" ref={visorRef}/>
         </>
     }
     </>

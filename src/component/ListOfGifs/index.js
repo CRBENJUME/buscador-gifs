@@ -9,6 +9,7 @@ export default function ListOfGifs ({ gifs }){
         <Gif
           id={id}
           key={id}
+          title={title}
           url={url}
         />
       )

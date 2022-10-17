@@ -11,7 +11,7 @@ export default function Home() {
     //eslint-disable-next-line
     const { loading, gifs } = useGifs()
 
-    const handleSubmit = evt =>{
+    const handleSubmit = evt => {
         evt.preventDefault();
         //Navegar a otra ruta
         pushLocation(`/search/${keyword}`)
@@ -29,15 +29,13 @@ export default function Home() {
                     value={keyword}
                 />
             </form>
-            <div className="App-wrapper">
-                <div className="App-main">
-                    <div className="App-results">
-                        <h3 className="App-title">Ultima Búsqueda</h3>
-                        <ListOfGifs gifs={gifs}/>
-                    </div>
-                    <div className="App-category">
-                       <TrendingSearches />
-                    </div>
+            <div className="App-main">
+                <div className="App-results">
+                    <h3 className="App-title">Ultima Búsqueda</h3>
+                    <ListOfGifs gifs={gifs}/>
+                </div>
+                <div className="App-category">
+                    <TrendingSearches />
                 </div>
             </div>
         </>

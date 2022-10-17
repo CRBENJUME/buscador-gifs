@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import getGifs from "../services/getGifs"
 import GifsContext from '../Context/gifContext'
-import { keyboard } from "@testing-library/user-event/dist/keyboard";
 
 const INITIAL_PAGE = 0
 
-export function useGifs({ keyword } = {keyword: null}){
+export function useGifs( { keyword } = { keyword: null } ){
     const [ loading, setLoading ] = useState(false);
     const [ loadingNextPage, setLoadingNextPage] = useState(false)
-    const [ gifs, setGifs ] = useState([GifsContext])
+
+    const { gifs, setGifs } = useState(GifsContext)
     const [ page, setPage ] = useState(INITIAL_PAGE)
 
     //Recuperamos la keyword del LocalStorage
@@ -34,7 +34,7 @@ export function useGifs({ keyword } = {keyword: null}){
             setGifs(prevGifs => prevGifs.concat(nextGifs))
             setLoadingNextPage(false)
         })
-    }, [page])
+    }, [keywordToUse, page, setGifs])
 
     return { loading, loadingNextPage, gifs, setPage }
 }
