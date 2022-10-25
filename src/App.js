@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React  from 'react'
 import './App.css'
 import Home from './pages/Home/Home'
 import SearchResults from './pages/SearchResults/index'
