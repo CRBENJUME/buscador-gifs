@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 
-function SearchForm ({ onSubmit }){
+export default function SearchForm ({ onSubmit }){
     const [keyword, setKeyword] = useState('')
+    //eslint-disable-next-line
+    const [, pushLocation] = useLocation()
 
     const handleSubmit = evt => {
         evt.preventDefault();
         //Navegar a otra ruta
-        onSubmit(keyword)
+        pushLocation(`/search/${keyword}`)
     }
+
     
     const handleChange = evt => {
         setKeyword(evt.target.value)
@@ -24,4 +27,4 @@ function SearchForm ({ onSubmit }){
     )
 }
 //Pasamos un compenente envuelto en memorizar
-export default React.memo(SearchForm)
+//export default React.memo(SearchForm)
