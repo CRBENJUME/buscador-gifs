@@ -1,8 +1,8 @@
 import React from "react"
 import { Redirect } from "wouter"
-import Gif from "component/Gif"
+import Gif from "components/Gif"
 import useSingleGif from "Hooks/useSingleGif"
-import Spinner from "component/Spinner"
+import Spinner from "components/Spinner"
 import { Helmet } from "react-helmet"
 
 export default function Detail({ params }) {

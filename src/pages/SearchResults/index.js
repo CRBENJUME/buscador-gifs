@@ -1,15 +1,15 @@
 import React, {useCallback, useEffect, useRef} from "react";
-import Spinner from "component/Spinner";
-import ListOfGifs from "component/ListOfGifs"
+import Spinner from "components/Spinner";
+import ListOfGifs from "components/ListOfGifs"
 import { useGifs } from "Hooks/useGifs";
 import useNearScreen from "Hooks/useNearScreen";
 import debounce from "just-debounce-it";
 import { Helmet } from "react-helmet";
-import SearchForm from "component/SearchForm";
+import SearchForm from "components/SearchForm";
 
 export default function SearchResults ({ params }) {
-    const { keyword } = params;
-    const { loading, gifs, setPage } = useGifs({ keyword })
+    const { keyword, rating = 'g' } = params;
+    const { loading, gifs, setPage } = useGifs({ keyword, rating })
     const externalRef = useRef()
     const { isNearScreen } = useNearScreen({ 
         externalRef: loading ? null : externalRef,

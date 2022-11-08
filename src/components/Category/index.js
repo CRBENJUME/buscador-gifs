@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "wouter";
-import '../Category/Category.css'
+import './Category.css'
 
 export default function Category({ name, options = [] }){
     return (

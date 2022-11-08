@@ -1,4 +1,4 @@
-import Spinner from 'component/Spinner'
+import Spinner from 'components/Spinner'
 import useNearScreen from 'Hooks/useNearScreen'
 import React, { Suspense } from 'react'
 

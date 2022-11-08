@@ -1,8 +1,8 @@
 import React, { useCallback } from "react";
-import ListOfGifs from "component/ListOfGifs"
+import ListOfGifs from "components/ListOfGifs"
 import { useGifs } from "Hooks/useGifs";
-import TrendingSearches from "component/TrendingSearches/index";
-import SearchForm from "component/SearchForm";
+import TrendingSearches from "components/TrendingSearches/index";
+import SearchForm from "components/SearchForm";
 import { Helmet } from "react-helmet";
 
 export default function Home() {
