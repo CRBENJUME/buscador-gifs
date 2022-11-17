@@ -36,7 +36,7 @@ export default function SearchResults ({ params }) {
             <meta name="description" content={title} />
         </Helmet>
         <header>
-            <SearchForm/> 
+            <SearchForm initialKeyword={keyword}/> 
         </header>
         <div className="App-wrapper">
             <h3 className="App-title">

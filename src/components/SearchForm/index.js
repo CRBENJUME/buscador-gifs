@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { useLocation } from "wouter";
 import css from './SearchForm.module.css'
+import useForm from "./hook";
 
 const RATINGS = ['g', 'pg', 'pg-13', 'r']
 
-export default function SearchForm (){
-    const [keyword, setKeyword] = useState('')
-    const [rating, setRating] = useState(RATINGS[0])
-    //eslint-disable-next-line
+export default function SearchForm ({ initialKeyword = '', initialRating = 'g' }) {
+    const { keyword, rating, times, updateKeyword, updateRating } = useForm({ initialKeyword, initialRating })
+    //const [rating, setRating] = useState(initialRating)
+
     const [_, pushLocation] = useLocation()
+
+    const handleChange = evt => {
+        updateKeyword(evt.target.value)
+    }
 
     const handleSubmit = evt => {
         evt.preventDefault();
@@ -16,13 +21,8 @@ export default function SearchForm (){
         pushLocation(`/search/${keyword}/${rating}`)
     }
 
-    
-    const handleChange = evt => {
-        setKeyword(evt.target.value)
-    }
-
     const handleChangeRating = evt => {
-        setRating(evt.target.value)
+        updateRating(evt.target.value)
     }
 
     return (
@@ -32,10 +32,11 @@ export default function SearchForm (){
                 onChange={handleChange} type='text' 
                 value={keyword}
             />
-            <select onSubmit={handleChange} value={rating}>
+            <select onSubmit={handleChangeRating} value={rating}>
                 <option disabled>Rating Type</option>
                 {RATINGS.map(rating => <option key={rating}>{rating}</option>)}
             </select>
+            <small>{times}</small>
         </form>
     )
 }

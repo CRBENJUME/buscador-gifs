@@ -3,8 +3,9 @@ import 'App.css'
 import SearchResults from 'pages/SearchResults'
 import { Link, Route } from 'wouter'
 import { GifsContextProvider } from 'Context/gifContext'
-import Home from 'pages/Home/Home'
 import Detail from 'pages/Detail/Detail'
+
+const HomePage = React.lazy(() => import('pages/Home/Home'))
 
 export default function App() {
   return (
@@ -12,10 +13,12 @@ export default function App() {
       <Suspense fallback={null}>
         <section className="App-content">
           <Link to="/">
-            <img className='App-logo' alt='Giffy Logo' src='/logo.png'/>
+            <figure className='App-logo'>
+              <img alt='Giffy Logo' src='/logo.png'/>
+            </figure>
           </Link>
           <GifsContextProvider>
-            <Route component={Home}  path="/" />
+            <Route component={HomePage}  path="/" />
             <Route component={SearchResults} path="/search/:keyword/:rating?" />
             
             <Route component={Detail} path="/gif/:id" />
