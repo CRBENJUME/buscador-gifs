@@ -14,7 +14,7 @@ export default function Fav({ id }) {
      addFav({ id })
     }
 
-    const [ label, emoji ] = isFaved ? ['Remove from favs', '❌'] : ['Add to favs', '🤍']
+    const [ label, emoji ] = isFaved ? ['Remove from favs', '❌'] : ['Add to favs', '❤️']
 
     return (
         <button className="gf-fav" onClick={handleClick}>
