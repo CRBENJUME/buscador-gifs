@@ -32,10 +32,12 @@ export default function Login() {
                 <input
                     placeholder="username" 
                     onChange={(e) => setUsername(e.target.value)} 
-                    value={username} />
-                <input type="password" 
+                    value={username} 
+                />
+                <input 
+                    type="password" 
                     placeholder="password" 
-                    onChance={(e) => setPassword(e.target.value)}
+                    onChange={(e) => setPassword(e.target.value)}
                     value={password}
                 />
                 <button>Login</button>
