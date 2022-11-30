@@ -26,7 +26,7 @@ export default function useUser() {
         addFavService({ fav, jwt })
             .then(setFavs)
             .catch(err => console.log(err))
-    }, [ jwt, setFavs])
+    }, [ jwt, setFavs ])
 
     const logout = useCallback(() => {
         window.sessionStorage.removeItem('jwt')

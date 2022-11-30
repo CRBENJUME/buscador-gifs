@@ -1,6 +1,6 @@
-import { useContext } from "react";
-import { GifsContextProvider } from "Context/gifContext";
+import {useContext} from 'react'
+import GifsContext from 'Context/gifsContext'
 
-export default function useGlobalGifs(){
-    return useContext(GifsContextProvider).gifs;
+export default function useGlobalGifs () {
+    return useContext(GifsContext).gifs
 }

@@ -1,43 +1,39 @@
 import { useReducer } from "react"
 
 const ACTIONS = {
-    UPDATE_KEYWORD: 'update-keyword',
-    UPDATE_RATING: 'update-rating'
+    CHANGE_KEYWORD: 'chance_keyword',
+    CHANGE_RATING: 'chance_rating'
 }
 
 const ACTIONS_REDUCERS = {
-    [ACTIONS.UPDATE_KEYWORD]: (state, action) => ({
+    [ACTIONS.CHANGE_KEYWORD]: (state, action) => ({
         ...state,
         keyword: action.payload,
         times: state.times + 1
     }),
-    [ACTIONS.UPDATE_RATING]: (state, action) => ({
+    [ACTIONS.CHANGE_RATING]: (state, action) => ({
         ...state,
         rating: action.payload
     })
 }
 
-const REDUCER = (state, action) => {
-    const action_reducer = ACTIONS_REDUCERS[action.type]
-    return action_reducer ? action_reducer(state, action) : state
+const reducer = (state, action) => {
+    const actionReducer = ACTIONS_REDUCERS[action.type]
+    return actionReducer ? actionReducer(state, action) : state
 }
 
-export default function useForm ({ initialKeyword = '', initialRating = 'g' }) {
-    const [state, dispatch] = useReducer(REDUCER, {
+export default function useForm ({ initialKeyword = '', initialRating = 'g' } = {}) {
+    const [{ keyword, rating }, dispatch] = useReducer(reducer, {
         keyword: decodeURIComponent(initialKeyword),
-        rating: initialRating,
-        times: 0
-    })
-
-    const [ keyword, rating, times ] = state
-
-    return {
+        rating: initialRating
+      });
+    
+      return {
+        changeKeyword: ({ keyword }) =>
+          dispatch({ type: ACTIONS.CHANGE_KEYWORD, payload: keyword }),
+        changeRating: ({ rating }) =>
+          dispatch({ type: ACTIONS.CHANGE_RATING, payload: rating }),
         keyword,
-        rating,
-        times,
-        updateKeyword: keyword => 
-            dispatch({ type: ACTIONS.UPDATE_KEYWORD, payload: keyword }), //keyword === evt.target.value
-        updateRating: rating => 
-            dispatch({ type: ACTIONS.UPDATE_RATING, payload: rating }) //rating === evt.target.value
-    }
+        rating
+      };
 }

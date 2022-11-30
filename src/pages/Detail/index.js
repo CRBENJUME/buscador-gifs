@@ -6,10 +6,9 @@ import Spinner from "components/Spinner"
 import { Helmet } from "react-helmet"
 
 export default function Detail({ params }) {
-    const {gif, isLoading, isErrored } = useSingleGif({ id: params.id })
-
-    //if a gif exist then change the title  
+    const { gif, isLoading, isError } = useSingleGif({ id: params.id })
     const title = gif ? gif.title : ''
+
     if(isLoading) {
         return (
             <>
@@ -20,7 +19,8 @@ export default function Detail({ params }) {
             </>
         )
     }
-    if(isErrored) return <Redirect to='404' />
+
+    if(isError) return <Redirect to='/404' />
     if(!gif) return null
 
     return <>

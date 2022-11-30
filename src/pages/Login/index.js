@@ -29,14 +29,16 @@ export default function Login() {
         {
             !isLoginLoading &&
             <form onSubmit={handleSubmit}>
-                <input type="text" 
-                    placeholder="Usuario" 
-                    onChange={e => setUsername(e.target.value)} 
+                <input
+                    placeholder="username" 
+                    onChange={(e) => setUsername(e.target.value)} 
                     value={username} />
                 <input type="password" 
-                    placeholder="Contraseña" 
-                    onChance={e => setPassword(e.target.value)}                         value={password}/>
-                    <button>Login</button>
+                    placeholder="password" 
+                    onChance={(e) => setPassword(e.target.value)}
+                    value={password}
+                />
+                <button>Login</button>
             </form>
         }
         {

@@ -5,7 +5,7 @@ import Header from 'components/Header'
 
 import login from 'pages/Login'
 import SearchResults from 'pages/SearchResults'
-import Detail from 'pages/Detail/Detail'
+import Detail from 'pages/Detail'
 
 import { GifsContextProvider } from 'Context/gifContext'
 import { UserContextProvider } from 'Context/UserContext'
