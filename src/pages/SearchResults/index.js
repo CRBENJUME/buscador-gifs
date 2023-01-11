@@ -3,8 +3,8 @@ import Spinner from "components/Spinner"
 import ListOfGifs from "components/ListOfGifs"
 import SearchForm from "components/SearchForm"
 
-import { useGifs } from "Hooks/useGifs"
-import useNearScreen from "Hooks/useNearScreen"
+import { useGifs } from "hooks/useGifs"
+import useNearScreen from "hooks/useNearScreen"
 
 import debounce from "just-debounce-it"
 import { Helmet } from "react-helmet"

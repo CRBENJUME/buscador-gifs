@@ -1,5 +1,5 @@
 import { useCallback, useContext, useState } from "react";
-import Context from "Context/UserContext";
+import Context from "context/UserContext";
 import loginService from "services/login";
 import addFavService from "services/addFav";
 

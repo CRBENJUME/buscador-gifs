@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "wouter";
 
-import useUser from "Hooks/useUser";
+import useUser from "hooks/useUser";
 import "./index.css"
 
 export default function Header() {

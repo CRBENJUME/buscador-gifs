@@ -1,7 +1,7 @@
 import React from "react"
 import { Redirect } from "wouter"
 import Gif from "components/Gif"
-import useSingleGif from "Hooks/useSingleGif"
+import useSingleGif from "hooks/useSingleGif"
 import Spinner from "components/Spinner"
 import { Helmet } from "react-helmet"
 

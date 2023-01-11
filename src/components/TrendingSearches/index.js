@@ -1,5 +1,5 @@
 import Spinner from 'components/Spinner'
-import useNearScreen from 'Hooks/useNearScreen'
+import useNearScreen from 'hooks/useNearScreen'
 import React, { Suspense } from 'react'
 
 //Para importar solamemte cuando se necesite

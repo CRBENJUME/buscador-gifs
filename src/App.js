@@ -7,8 +7,8 @@ import login from 'pages/Login'
 import SearchResults from 'pages/SearchResults'
 import Detail from 'pages/Detail'
 
-import { GifsContextProvider } from 'Context/gifContext'
-import { UserContextProvider } from 'Context/UserContext'
+import { GifsContextProvider } from 'context/GifContext'
+import { UserContextProvider } from 'context/UserContext'
 
 import 'App.css'
 
